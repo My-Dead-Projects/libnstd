@@ -2,10 +2,11 @@
 #define libnstd_sorted_tree_hpp
 
 #include "tree_node.hpp"
+#include <functional>
 
 namespace nstd {
     
-    template <class T, class C>
+    template <class T, class C = std::less<T>>
     class sorted_tree {
     public:
         tree_node_ptr<T> root_node;
