@@ -9,9 +9,10 @@ namespace nstd {
     class tree_node {
     public:
         T value;
+        std::shared_ptr<tree_node<T>> unode;
         std::shared_ptr<tree_node<T>> lnode;
         std::shared_ptr<tree_node<T>> rnode;
-        tree_node(T const& = T());
+        tree_node(T const& = T(), std::shared_ptr<tree_node<T>> = nullptr);
     };
 
     template <class T>
@@ -22,7 +23,9 @@ namespace nstd {
 
 
 template <class T>
-nstd::tree_node<T>::tree_node(T const& v) : value(v) {
+nstd::tree_node<T>::tree_node(T const& v,
+                              std::shared_ptr<tree_node<T>> n
+                              ) : value(v), unode(n) {
     
 }
 
