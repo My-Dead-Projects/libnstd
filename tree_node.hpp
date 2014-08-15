@@ -14,6 +14,9 @@ namespace nstd {
         tree_node(const T&);
     };
 
+    template <class T>
+    using tree_node_ptr = std::shared_ptr<tree_node<T>>;
+    
 }
 
 template <class T>
