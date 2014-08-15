@@ -50,13 +50,21 @@ SCENARIO("nstd::sorted_tree", "[sorted_tree]") {
         
         sorted_tree<int> tree;
         
-        tree.root_node = make_shared<tree_node<int>>(64);
-        tree.root_node->lnode = make_shared<tree_node<int>>(32);
-        tree.root_node->lnode->lnode = make_shared<tree_node<int>>(16);
-        tree.root_node->lnode->rnode = make_shared<tree_node<int>>(48);
-        tree.root_node->rnode = make_shared<tree_node<int>>(96);
-        tree.root_node->rnode->lnode = make_shared<tree_node<int>>(80);
-        tree.root_node->rnode->rnode = make_shared<tree_node<int>>(112);
+        auto node16  = make_shared<tree_node<int>>(16);
+        auto node32  = make_shared<tree_node<int>>(32);
+        auto node48  = make_shared<tree_node<int>>(48);
+        auto node64  = make_shared<tree_node<int>>(64);
+        auto node80  = make_shared<tree_node<int>>(80);
+        auto node96  = make_shared<tree_node<int>>(96);
+        auto node112 = make_shared<tree_node<int>>(112);
+        
+        tree.root_node = node64;
+        tree.root_node->lnode = node32;
+        tree.root_node->lnode->lnode = node16;
+        tree.root_node->lnode->rnode = node48;
+        tree.root_node->rnode = node96;
+        tree.root_node->rnode->lnode = node80;
+        tree.root_node->rnode->rnode = node112;
         
         WHEN("find is called on those values") {
             
