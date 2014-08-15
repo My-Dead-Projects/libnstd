@@ -5,11 +5,17 @@
 
 SCENARIO("nstd::sorted_tree", "[sorted_tree]") {
     
-    GIVEN("a nstd::sorted_tree<int>") {
+    using nstd::sorted_tree;
+    using nstd::tree_node;
+    using std::make_shared;
+    
+    GIVEN("a sorted_tree<int>") {
         
-        nstd::sorted_tree<int> tree;
+        sorted_tree<int> tree;
         
         REQUIRE(!tree.root_node);
+        REQUIRE(tree.root_node == nullptr);
+        
     }
     
 }
