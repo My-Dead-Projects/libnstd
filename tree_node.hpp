@@ -22,7 +22,7 @@ namespace nstd {
 
 
 template <class T>
-nstd::tree_node<T>::tree_node(const T& v) : value(v) {
+nstd::tree_node<T>::tree_node(T const& v) : value(v) {
     
 }
 
