@@ -16,6 +16,34 @@ SCENARIO("nstd::sorted_tree", "[sorted_tree]") {
         REQUIRE(!tree.root_node);
         REQUIRE(tree.root_node == nullptr);
         
+        WHEN("values are added via find()") {
+            
+            auto node16  = make_shared<tree_node<int>>(16);
+            auto node32  = make_shared<tree_node<int>>(32);
+            auto node48  = make_shared<tree_node<int>>(48);
+            auto node64  = make_shared<tree_node<int>>(64);
+            auto node80  = make_shared<tree_node<int>>(80);
+            auto node96  = make_shared<tree_node<int>>(96);
+            auto node112 = make_shared<tree_node<int>>(112);
+            
+            tree.find(64)  = node64;
+            tree.find(32)  = node32;
+            tree.find(16)  = node16;
+            tree.find(48)  = node48;
+            tree.find(96)  = node96;
+            tree.find(80)  = node80;
+            tree.find(112) = node112;
+            
+            REQUIRE(tree.root_node->lnode->lnode == node16);
+            REQUIRE(tree.root_node->lnode == node32);
+            REQUIRE(tree.root_node->lnode->rnode == node48);
+            REQUIRE(tree.root_node == node64);
+            REQUIRE(tree.root_node->rnode->lnode == node80);
+            REQUIRE(tree.root_node->rnode == node96);
+            REQUIRE(tree.root_node->rnode->rnode == node112);
+            
+        }
+        
     }
     
     GIVEN("a sorted_tree<int> with some values in proper sort order") {
