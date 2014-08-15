@@ -5,14 +5,14 @@
 
 namespace nstd {
 
-template <class T>
-class tree_node {
-public:
-    T value;
-    std::shared_ptr<tree_node<T>> lnode;
-    std::shared_ptr<tree_node<T>> rnode;
-    tree_node(const T&);
-};
+    template <class T>
+    class tree_node {
+    public:
+        T value;
+        std::shared_ptr<tree_node<T>> lnode;
+        std::shared_ptr<tree_node<T>> rnode;
+        tree_node(const T&);
+    };
 
 }
 
