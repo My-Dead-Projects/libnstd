@@ -25,7 +25,8 @@ nstd::tree_node_ptr<T> & nstd::sorted_tree<T, C>::find(T const& value) {
 }
 
 template <class T, class C>
-nstd::tree_node_ptr<T> & nstd::sorted_tree<T, C>::find(T const& value, nstd::tree_node_ptr<T> & node) {
+nstd::tree_node_ptr<T> &
+nstd::sorted_tree<T, C>::find(T const& value, nstd::tree_node_ptr<T> & node) {
     
 }
 
