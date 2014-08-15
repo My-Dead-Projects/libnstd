@@ -18,4 +18,20 @@ SCENARIO("nstd::sorted_tree", "[sorted_tree]") {
         
     }
     
+    
+}
+
+SCENARIO("nstd::tree_node", "[tree_node]") {
+    
+    using nstd::tree_node;
+    
+    GIVEN("a nstd::tree_node<int>") {
+        
+        tree_node<int> node;
+        
+        REQUIRE(!node.lnode);
+        REQUIRE(!node.rnode);
+        
+    }
+    
 }
