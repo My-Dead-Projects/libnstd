@@ -17,7 +17,7 @@ namespace nstd {
 }
 
 template <class T>
-nstd::tree_node<T>::tree_node(const T& v) : value(v), lnode(nullptr), rnode(nullptr) {
+nstd::tree_node<T>::tree_node(const T& v) : value(v) {
     
 }
 
