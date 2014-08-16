@@ -8,9 +8,13 @@ namespace nstd {
     
     template <class T, class C = std::less<T>>
     class sorted_tree_iterator {
+        
         tree_node_ptr<T> node;
+        
     public:
+        
         sorted_tree_iterator(tree_node_ptr<T>);
+        
     };
     
     template <class T, class C = std::less<T>>
