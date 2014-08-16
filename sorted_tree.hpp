@@ -14,6 +14,7 @@ namespace nstd {
     public:
         
         sorted_tree_iterator(tree_node_ptr<T>);
+        explicit operator bool()const;
         
     };
     
@@ -57,6 +58,11 @@ template <class T, class C>
 nstd::sorted_tree_iterator<T, C>::
 sorted_tree_iterator(nstd::tree_node_ptr<T> n) : node(n) {
     
+}
+
+template <class T, class C>
+nstd::sorted_tree_iterator<T, C>::operator bool()const {
+    return bool(node);
 }
 
 #endif
