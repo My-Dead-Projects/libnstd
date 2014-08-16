@@ -22,7 +22,7 @@ namespace nstd {
     class sorted_tree {
         
         tree_node_ptr<T> root_node;
-        tree_node_ptr<T> & find(T const&, tree_node_ptr<T> &);
+        tree_node_ptr<T> find(T const&, tree_node_ptr<T>);
         
     public:
         
@@ -40,9 +40,9 @@ nstd::sorted_tree_iterator<T> nstd::sorted_tree<T, C>::find(T const& value) {
 }
 
 template <class T, class C>
-nstd::tree_node_ptr<T> &
+nstd::tree_node_ptr<T>
 nstd::sorted_tree<T, C>::find(T const& value,
-                              nstd::tree_node_ptr<T> & node) {
+                              nstd::tree_node_ptr<T> node) {
     if (node) {
         C compare;
         if (compare(value, node->value)) {
