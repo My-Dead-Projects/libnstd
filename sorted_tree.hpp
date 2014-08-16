@@ -7,6 +7,13 @@
 namespace nstd {
     
     template <class T, class C = std::less<T>>
+    class sorted_tree_iterator {
+        tree_node_ptr<T> node;
+    public:
+        sorted_tree_iterator(tree_node_ptr<T>);
+    };
+    
+    template <class T, class C = std::less<T>>
     class sorted_tree {
     public:
         tree_node_ptr<T> root_node;
@@ -37,6 +44,12 @@ nstd::sorted_tree<T, C>::find(T const& value,
         }
     }
     return node;
+}
+
+template <class T, class C>
+nstd::sorted_tree_iterator<T, C>::
+sorted_tree_iterator(nstd::tree_node_ptr<T> n) : node(n) {
+    
 }
 
 #endif
